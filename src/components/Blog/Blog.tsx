@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react';
 
+interface BlogEntry {
+  id: string;
+  fields: {
+    title: string;
+    intro: string;
+  }
+}
+
 function Blog() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<BlogEntry[]>([]);
   useEffect(() => {
     // TODO: refactor to service
     fetch('https://api.airtable.com/v0/appZ3Ko6K42jAMR0H/news?view=default', {
@@ -9,8 +17,8 @@ function Blog() {
         Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`
       }
     })
-    .then(response => response.json())
-    .then(data => setPosts(data.records))
+      .then(response => response.json())
+      .then(data => setPosts(data.records))
   }, []);
   return (
     <div>
