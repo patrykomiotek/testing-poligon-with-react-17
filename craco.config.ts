@@ -16,9 +16,12 @@ module.exports = {
   jest: {
     configure: {
       verbose: true,
-      moduleNameMapper: {
+      moduleNameMapper: { // this can be done by webpack plugin
+        '^axios$': require.resolve('axios'),
         "@components(.*)$": "<rootDir>/src/components$1",
         "@hooks(.*)$": "<rootDir>/src/hooks$1",
+        "@features(.*)$": "<rootDir>/src/features$1",
+        "@model(.*)$": "<rootDir>/src/model$1",
         "@pages(.*)$": "<rootDir>/src/pages$1",
         "@services(.*)$": "<rootDir>/src/services$1",
         "@stories(.*)$": "<rootDir>/src/stories$1",

@@ -1,4 +1,12 @@
+import React from 'react';
+import { initialize, mswDecorator } from "msw-storybook-addon";
+import { Provider } from "react-redux";
 import type { Preview } from "@storybook/react";
+
+import { store } from "../src/store";
+
+// Initialize MSW
+initialize();
 
 const preview: Preview = {
   parameters: {
@@ -17,5 +25,14 @@ const preview: Preview = {
     },
   },
 };
+
+export const decorators = [
+  mswDecorator,
+  (Story) => (
+    <Provider store={store}>
+      <Story />
+    </Provider>
+  ),
+];
 
 export default preview;

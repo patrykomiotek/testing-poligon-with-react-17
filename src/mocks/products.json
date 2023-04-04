@@ -1,0 +1,17 @@
+{
+  "records": [
+      {
+          "id": "rec4AJyupvZX6mTcX",
+          "fields": {
+              "status": "sold out",
+              "description": "Lorem ipsum2",
+              "orders": [
+                  "rec3F5yjjJmaI5lf2",
+                  "rec3kKLpcKAkQcucH"
+              ],
+              "price": 4000,
+              "name": "iPhone 17"
+          }
+      }
+  ]
+}

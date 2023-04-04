@@ -1,0 +1,1 @@
+export { ProductsListWithUseApi } from './ProductsListWithUseApi';
